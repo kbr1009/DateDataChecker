@@ -15,7 +15,7 @@ int main(void) {
 
   printf("%d年%d月%d日は、", year, month, day);
   /*末日以外の判定*/
-  if( ( ( year >= 1900 ) && ( year <= 2100 ) ) && ( month >= 1 ) && ( month <= 12 ) && ( day >= 1) ){
+  if( ( ( year >= 1900 ) && ( year <= 2050 ) ) && ( month >= 1 ) && ( month <= 12 ) && ( day >= 1) ){
     /*31日まである日の判定*/
     if (( month == (1||3||5||7||8||10||12)) && ( day <= lastday[month-1]) ){
       flag = 0;
@@ -46,9 +46,9 @@ int main(void) {
     flag = 1;
   }
   if( flag == 0){
-    printf("正しい日付です\n");
+    printf("入力OK\n");
   }else{
-    printf("誤った日付です\n");
+    printf("入力エラー\n");
   }
   return 0;
 }
