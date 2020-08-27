@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-int main(void) {
+int main(void) 
+{
 
   int lastday[12] = {31,28,31,30,31,30,31,31,30,31,30,31};/*末日の判定に使用*/
   int flag = -1;
@@ -15,39 +16,62 @@ int main(void) {
 
   printf("", year, month, day);
   /*末日以外の判定*/
-  if( ( ( year >= 1900 ) && ( year <= 2050 ) ) && ( month >= 1 ) && ( month <= 12 ) && ( day >= 1) ){
+  if( ( ( year >= 1900 ) && ( year <= 2050 ) ) && ( month >= 1 ) && ( month <= 12 ) && ( day >= 1) )
+  {
     /*31日まである日の判定*/
-    if (( month == (1||3||5||7||8||10||12)) && ( day <= lastday[month-1]) ){
+    if (( month == (1||3||5||7||8||10||12)) && ( day <= lastday[month-1]) )
+    {
       flag = 0;
-    }else{
+    }
+    else
+    {
       /*30日まである日の判定*/
-      if( ( month == (4||6||9||11)) && ( day <= lastday[month-1] ) ){
+      if( ( month == (4||6||9||11)) && ( day <= lastday[month-1] ) )
+      {
         flag = 0;
-      }else{
+      }
+      else
+      {
         /*うるう年かどうか*/
-        if( year % 400 ==0||( year % 4 == 0 && !( year % 100 == 0 ) ) ){
+        if( year % 400 ==0||( year % 4 == 0 && !( year % 100 == 0 ) ) )
+	{
           /*うるう年なら29日以下か*/
-          if( day <= 29){
+          if( day <= 29)
+	  {
             flag = 0;
-          }else{
+          }
+	  else
+	  {
             flag = -1;
           }
-        }else{
+        }
+	
+	else
+	{
           /*うるう年でないなら28日以下か*/
-          if( day <= 28){
+          if( day <= 28)
+	  {
             flag = 0;
-          }else{
+          }
+	  
+	  else
+	  {
             flag = -1;
           }
         }
       }
     }
-  }else{
+  }
+  else
+  {
     flag = 1;
   }
-  if( flag == 0){
+  if( flag == 0)
+  {
     printf("入力OK\n");
-  }else{
+  }
+  else
+  {
     printf("入力エラー\n");
   }
   return 0;
