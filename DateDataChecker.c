@@ -13,7 +13,7 @@ int main(void) {
   printf("日＝＝＞ ");
   scanf("%d", &day);
 
-  printf("%d年%d月%d日は、", year, month, day);
+  printf("", year, month, day);
   /*末日以外の判定*/
   if( ( ( year >= 1900 ) && ( year <= 2050 ) ) && ( month >= 1 ) && ( month <= 12 ) && ( day >= 1) ){
     /*31日まである日の判定*/
