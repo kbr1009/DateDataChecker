@@ -75,4 +75,5 @@ int main(void)
     printf("入力エラー\n");
   }
   return 0;
-}
+
+} /*fuck you!*/
